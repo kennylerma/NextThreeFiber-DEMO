@@ -5,11 +5,21 @@ import { KeyboardControls, OrbitControls } from "@react-three/drei";
 import css from "../styles/Home.module.css";
 import LightDirect from "../components/scene/LightDirect";
 import BasicCube from "../components/scene/BasicCube";
-import { NextPage } from "next";
+import { NextPage, NextPageContext } from "next";
 import Character from "../components/scene/Character";
 import { PCFSoftShadowMap } from "three";
+import { getUserDetails } from "./api/userdata";
 
-const Home: NextPage = (props) => {
+interface HomePageProps {
+  userDetails: {
+    name: string;
+    work: string;
+  };
+}
+
+const Home: NextPage<HomePageProps> = (props) => {
+  console.log("User Details", props.userDetails);
+
   const controls = [
     { name: "forward", keys: ["w"] },
     { name: "backward", keys: ["s"] },
@@ -35,6 +45,16 @@ const Home: NextPage = (props) => {
       </KeyboardControls>
     </div>
   );
+};
+
+export const getServerSideProps = (context: NextPageContext) => {
+  const userDetails = getUserDetails();
+
+  return {
+    props: {
+      userDetails,
+    },
+  };
 };
 
 export default Home;
