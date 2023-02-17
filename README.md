@@ -1,3 +1,3 @@
 The is a demo NextJS app using react-three-fiber.
 
-![chrome_dsTGtslZsZ](https://user-images.githubusercontent.com/1977536/205722739-22549069-e820-48fd-b24d-ec9062192f5e.png)
+![VyijLj5zUC](https://user-images.githubusercontent.com/1977536/219539226-8c8650d2-9f06-4f5b-8925-553739d6d267.png)
