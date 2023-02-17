@@ -51,7 +51,7 @@ const Character: FC = () => {
   }, [forward, left, right]);
 
   const cameraOffset = (): Vector3 => {
-    const offset: Vector3 = new Vector3(0, 0.6, 1.6);
+    const offset: Vector3 = new Vector3(0, 2.5, 2.6);
     if (ref.current) {
       offset.applyQuaternion(ref.current?.quaternion);
       offset.add(ref.current.position);
@@ -60,7 +60,7 @@ const Character: FC = () => {
   };
 
   const cameraLookAt = (): Vector3 => {
-    const lookat = new Vector3(0, 0.6, 0);
+    const lookat = new Vector3(0, 2, 0);
     if (ref.current) {
       lookat.applyQuaternion(ref.current.quaternion);
       lookat.add(ref.current.position);

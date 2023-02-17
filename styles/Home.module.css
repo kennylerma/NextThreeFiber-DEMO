@@ -4,7 +4,7 @@
 }
 
 .canvas {
-  background: #88bfff;
+  background: linear-gradient(0deg, rgba(246,250,255,1) 0%, rgba(136,191,255,1) 100%);
 }
 
 .container {

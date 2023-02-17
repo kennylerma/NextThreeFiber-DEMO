@@ -9,6 +9,8 @@ import { NextPage, NextPageContext } from "next";
 import Character from "../components/scene/Character";
 import { PCFSoftShadowMap } from "three";
 import { getUserDetails } from "./api/userdata";
+import House from "../components/scene/House";
+
 
 interface HomePageProps {
   userDetails: {
@@ -32,13 +34,14 @@ const Home: NextPage<HomePageProps> = (props) => {
       <KeyboardControls map={controls}>
         <Canvas
           className={css.canvas}
-          camera={{ position: [0, 0.6, 1.6] }}
+          camera={{ position: [0, 1, 1.6] }}
           shadows={{ enabled: true, type: PCFSoftShadowMap }}
         >
           <LightAmbient />
           <LightDirect />
-          <Terrain />
-          <BasicCube visible={true} />
+          {/* <Terrain /> */}
+          <House />
+          <BasicCube visible={false} />
           <Character />
           {/* <OrbitControls makeDefault /> */}
         </Canvas>
